@@ -190,7 +190,7 @@ char box_map_switch(struct box_map *map, int col, int line, int direction) {
     if (direction) {
         if (col < BOX_MAP_WIDTH-1) { 
             b = map->map[col+1][line];
-            if (a != ' ' || b != ' ') {
+            if (a != b) {
                 map->map[col][line] = b;
                 map->map[col+1][line] = a;
                 return 1;
@@ -200,7 +200,7 @@ char box_map_switch(struct box_map *map, int col, int line, int direction) {
         if (line < BOX_MAP_HEIGHT-1) {
             b = map->map[col][line+1];
 
-            if (a != ' ' || b != ' ') {
+            if (a != b) {
                 map->map[col][line] = b;
                 map->map[col][line+1] = a;
                 return 1;

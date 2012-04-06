@@ -1,6 +1,6 @@
 BIN=box
 OBJ=main.o box.o
-CFLAGS=-g
+CFLAGS=-O2
 
 all: $(BIN)
 
