@@ -71,7 +71,11 @@ char box_destroy(struct box_map *map) {
         for (col=0; col<BOX_MAP_WIDTH; col++) {
             cur = map->map[col][line];
 
-            if (cur != chain || col==BOX_MAP_WIDTH-1 || cur == ' ') {
+            if (cur != chain || col == BOX_MAP_WIDTH-1 || cur == ' ') {
+                if (cur == chain && cur != ' ') {
+                    number++;
+                    col++;
+                }
                 if (number >= 3) {
                     changed = 1;
                     for (back=1; back<=number; back++) {
@@ -93,6 +97,10 @@ char box_destroy(struct box_map *map) {
             cur = map->map[col][line];
 
             if (cur != chain || col==BOX_MAP_WIDTH-1 || cur == ' ') {
+                if (cur == chain && cur != ' ') {
+                    number++;
+                    line++;
+                }
                 if (number >= 3) {
                     changed = 1;
                     for (back=1; back<=number; back++) {

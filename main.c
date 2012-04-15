@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
     }
 
     map = box_load(argv[1]);
+
     box_solve(map, atoi(argv[2]));
 
     return EXIT_SUCCESS;
